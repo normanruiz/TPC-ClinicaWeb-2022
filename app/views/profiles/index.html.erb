@@ -1,0 +1,27 @@
+<h1>Clinica Web - Sistema de administracion de turnos</h1>
+<hr/>
+<h2>Administracion de Perfiles</h2>
+<hr/>
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">edit</th>
+      <th scope="col">destroy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @profiles.each do |profile| %>
+    <tr>
+      <th scope="row"> <%= profile.id %> </th>
+      <td> <%= profile.name %> </td>
+      <td> edit </td>
+      <td> destroy </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
+<hr/>
+<p>copyrigth - fecha - usuario - perfil</p>
