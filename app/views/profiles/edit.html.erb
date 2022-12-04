@@ -1,0 +1,15 @@
+<h1>Clinica Web - Sistema de administracion de turnos</h1>
+<hr/>
+<h2>Administracion de Perfiles</h2>
+<hr/>
+<h3>profile creation</h3>
+<hr/>
+<%= form_for @profile, url: {action: 'update', id: @profile.id}, html: {class: 'css_class'} do |profile| %>
+<p><%= profile.label :name, "Profile name: " %>
+<%= profile.text_field :name %></p>
+<hr/>
+<%= profile.submit "Save" %>
+<%= link_to "Cancel", action: 'index' %>
+<% end %>
+<hr/>
+<p>copyrigth - fecha - usuario - perfil</p>
