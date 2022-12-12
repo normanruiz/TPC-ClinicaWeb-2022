@@ -1,0 +1,15 @@
+<h1>Clinica Web - Sistema de administracion de turnos</h1>
+<hr/>
+<h2>Users Management</h2>
+<hr/>
+<h3>User detail</h3>
+<hr/>
+<p>Id.: <%= @user.id %> </p>
+<p>User: <%= @user.user %> </p>
+<p>Password: <%= @user.password %> </p>
+<p>Profile: <%= @user.profile.name %> </p>
+<p>State: <%= @user.state ? 'Activo' : 'Inactivo' %> </p>
+<hr/>
+<%= link_to "Index", action: 'index' %>
+<hr/>
+<p>copyrigth - fecha - usuario - perfil</p>

@@ -1,0 +1,32 @@
+<h2>Users Management</h2>
+<hr/>
+<%= link_to "New User", action: 'new' %>
+<hr/>
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">User</th>
+      <th scope="col">Profile</th>
+      <th scope="col">State</th>
+      <th scope="col">detail</th>
+      <th scope="col">edit</th>
+      <th scope="col">destroy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <th scope="row"> <%= user.id %> </th>
+      <td> <%= user.user %> </td>
+      <td> <%= user.profile.name %> </td>
+      <td> <%= user.state ? 'Activo' : 'Inactivo' %> </td>
+      <td> <%= link_to "Detail", action: 'show', id: user.id %> </td>
+      <td> <%= link_to "Edit", action: 'edit', id: user.id %> </td>
+      <td> <%= link_to "Destroy", {action: 'destroy', id: user.id}, data:{turbo_method: :delete, turbo_confirm: 'are you sure?'} %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<hr/>
+<p>copyrigth - fecha - usuario - perfil</p>

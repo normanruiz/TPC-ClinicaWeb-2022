@@ -1,0 +1,19 @@
+<h1>Clinica Web - Sistema de administracion de turnos</h1>
+<hr/>
+<h2>User Management</h2>
+<hr/>
+<h3>User creation</h3>
+<hr/>
+<%= form_for @user, url: {action: 'create'}, html: {class: 'css_class'} do |user| %>
+<p><%= user.label :user, "User: " %>
+<%= user.text_field :user %></p>
+<p><%= user.label :password, "Password: " %>
+<%= user.text_field :password %></p>
+<p><%= user.label :profile, "Profile: " %>
+<%= user.select :profile, @profiles %> </p>
+<hr/>
+<%= user.submit "Save" %>
+<%= link_to "Cancel", action: 'index' %>
+<% end %>
+<hr/>
+<p>copyrigth - fecha - usuario - perfil</p>

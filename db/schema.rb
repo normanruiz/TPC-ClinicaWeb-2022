@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_02_171249) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_04_184518) do
   create_table "profiles", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "user"
+    t.string "password"
+    t.integer "profile_id", null: false
+    t.boolean "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_users_on_profile_id"
+  end
+
+  add_foreign_key "users", "profiles"
 end
